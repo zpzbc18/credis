@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 
   /* create handle to a Redis server running on localhost, port 6789,
      with a 2 second response timeout */
-  rh = credis_connect("localhost", 6789, 2000);
+  rh = credis_connect(NULL, 6789, 2000);
 
   /* ping server */
   credis_ping(rh);
@@ -34,5 +34,7 @@ int main(int argc, char **argv)
 
   /* close connection to redis server */
   credis_close(rh);
+
+  return 0;
 }
 }}}
